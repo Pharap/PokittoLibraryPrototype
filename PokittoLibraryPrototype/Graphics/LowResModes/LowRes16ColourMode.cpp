@@ -7,12 +7,12 @@ void GraphicsMode::fill(IndexType index)
 	const ByteType maskedIndex = (index & indexMask);
 	const ByteType value = (maskedIndex << 4) | (maskedIndex << 0);
 	GraphicsMode::buffer.fill(value);
-};
+}
 
 void GraphicsMode::clear()
 {
 	GraphicsMode::buffer.fill(0);
-};
+}
 
 void GraphicsMode::setPixel(int x, int y, IndexType colourIndex)
 {
