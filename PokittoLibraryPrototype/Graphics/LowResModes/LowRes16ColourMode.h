@@ -83,11 +83,11 @@ namespace Pokitto
 
 		/// Copies the colour values from the specified array into the colour palette.
 		template<std::size_t size>
-		void setPalette(RGB565 (&colours)[size])
+		static void setPalette(RGB565 (&colours)[size])
 		{
 			constexpr std::size_t limit = (colourCount < size) ? colourCount : size;
 
-			std::copy_n(colours, limit, this->palette.begin());
+			std::copy_n(colours, limit, std::begin(this->palette));
 		}
 
 		/// Fills the display mode's frame buffer with the specified colour index.
